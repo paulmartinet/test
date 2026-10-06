@@ -1,7 +1,5 @@
 ```mermaid
 graph TD
-    %% Équipement principal
-    Box["Box Internet / Routeur\n192.168.4.254"] --> Switch["Switch Principal"]
 
     %% Sous-réseau Local
     subgraph LAN ["Réseau Local (192.168.4.0/24)"]
