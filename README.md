@@ -1,3 +1,5 @@
+![Schéma réseau](g4.png)
+
 ```mermaid
 graph TD
 
@@ -9,4 +11,3 @@ graph TD
     end
 
 ```markdown
-![Schéma réseau](g4.png)
