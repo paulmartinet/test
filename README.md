@@ -1,23 +1,11 @@
-Réseau : 192.168.4.0/24
-
-IP : 192.168.4.1 PC Serveur Local
-192.168.4.10 – .29	Objets IoT
-192.168.4.30 – .49	Postes de l'équipe
-
-
 ```mermaid
 graph TD
-    %% Définition des équipements
-    Internet((Internet)) -->|Fibre| Box[Box Internet / Routeur]
-    Box --> Switch[Switch Principal]
-    
-    subgraph Réseau Local (LAN)
-        Switch --> NAS[NAS Synology\n192.168.1.10]
-        Switch --> PC[PC Fixe\n192.168.1.50]
-        Switch --> Borne[Borne Wi-Fi]
-    end
+    %% Équipement principal
+    Box["Box Internet / Routeur\n192.168.4.254"] --> Switch["Switch Principal"]
 
-    subgraph Appareils Wi-Fi
-        Borne -.-> Phone[Smartphone]
-        Borne -.-> TV[Smart TV]
+    %% Sous-réseau Local
+    subgraph LAN ["Réseau Local (192.168.4.0/24)"]
+        Switch --> Serveur["PC Serveur Local\n192.168.4.1"]
+        Switch --> IoT["Objets IoT\n192.168.4.10 - .29"]
+        Switch --> Postes["Postes de l'équipe\n192.168.4.30 - .49"]
     end
